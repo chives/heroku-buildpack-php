@@ -217,7 +217,7 @@ fi
 # minimal PHP needed for installs, and make "composer" invocations use that for now
 mkdir -p $build_dir/.heroku/php-min
 ln -s $build_dir/.heroku/php-min /app/.heroku/php-min
-
+echo git@github.com:chives/heroku-buildpack-php.git
 curl_retry_on_18 --fail --silent --location -o $build_dir/.heroku/php-min.tar.gz "${s3_url}php-min-7.3.15.tar.gz" || {
 	mcount "failures.bootstrap.download.php-min"
 	error <<-EOF
